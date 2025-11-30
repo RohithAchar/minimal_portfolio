@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Fix overscroll background color */
+html,
+body {
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+html.dark,
+body.dark {
+  background-color: #18181b; /* zinc-900 */
+}
