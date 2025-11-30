@@ -7,6 +7,14 @@ import {
   BookOpen,
   Mail,
   Home,
+  Code,
+  Globe,
+  Database,
+  Server,
+  GitBranch,
+  Cloud,
+  Terminal,
+  Play,
 } from "lucide-react";
 
 export default function Portfolio() {
@@ -643,187 +651,135 @@ export default function Portfolio() {
                   learn and adapt, allows me to deliver solutions that truly
                   address the requirements at hand.
                 </p>
-                <div className="space-y-6 mt-6">
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Frontend
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["React", "Next.js", "Tailwind CSS", "shadcn/ui"].map(
-                        (tech) => (
-                          <span
-                            key={tech}
-                            className={`px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 ${
-                              isDark
-                                ? "bg-zinc-800 text-zinc-200"
-                                : "bg-gray-100 text-gray-800"
-                            }`}
-                          >
-                            {tech}
-                          </span>
-                        )
-                      )}
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 ${
-                          isDark
-                            ? "bg-zinc-800 text-zinc-200 border border-zinc-600"
-                            : "bg-gray-100 text-gray-800 border border-gray-300"
-                        }`}
-                      >
-                        Three.js
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Design Tools
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          isDark
-                            ? "bg-zinc-800 text-zinc-200"
-                            : "bg-gray-100 text-gray-800"
-                        }`}
-                      >
-                        Figma
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Backend
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          isDark
-                            ? "bg-zinc-800 text-zinc-200"
-                            : "bg-gray-100 text-gray-800"
-                        }`}
-                      >
-                        Node.js
-                      </span>
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 ${
-                          isDark
-                            ? "bg-zinc-800 text-zinc-200 border border-zinc-600"
-                            : "bg-gray-100 text-gray-800 border border-gray-300"
-                        }`}
-                      >
-                        Python (Learning)
-                      </span>
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 ${
-                          isDark
-                            ? "bg-zinc-800 text-zinc-200 border border-zinc-600"
-                            : "bg-gray-100 text-gray-800 border border-gray-300"
-                        }`}
-                      >
-                        C (Basics)
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Server & Deployment
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["Supabase", "AWS", "Render", "Vercel"].map((tech) => (
-                        <span
-                          key={tech}
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            isDark
-                              ? "bg-gray-800 text-gray-200"
+                <div className="mt-6 overflow-hidden w-full">
+                  <div className="flex gap-4 animate-marquee">
+                    {/* First set */}
+                    {[
+                      { name: "React", svg: "/logo-react.svg" },
+                      { name: "Next.js", svg: "/nextjs-icon-svgrepo-com.svg" },
+                      {
+                        name: "Tailwind CSS",
+                        svg: "/tailwindcss-svgrepo-com.svg",
+                      },
+                      { name: "shadcn/ui", svg: "/shadcn-ui-seeklogo.svg" },
+                      { name: "Figma", svg: "/logo-figma.svg" },
+                      { name: "Node.js", svg: "/logo-nodejs.svg" },
+                      { name: "Python", svg: "/logo-python.svg", border: true },
+                      { name: "C", icon: Terminal, border: true },
+                      { name: "Supabase", icon: Cloud },
+                      { name: "AWS", svg: "/aws-svgrepo-com.svg" },
+                      { name: "Vercel", icon: Play, fill: true },
+                      { name: "MongoDB", svg: "/mongodb-svgrepo-com.svg" },
+                      {
+                        name: "PostgreSQL",
+                        svg: "/postgresql-svgrepo-com.svg",
+                      },
+                      { name: "Git", svg: "/git-branch-outline.svg" },
+                      { name: "GitHub", svg: "/logo-github.svg" },
+                      {
+                        name: "Linux",
+                        svg: "/linux-svgrepo-com.svg",
+                      },
+                    ].map((tech, idx) => {
+                      return (
+                        <div
+                          key={`first-${idx}`}
+                          className={`p-3 rounded-lg transition-colors duration-200 shrink-0 flex items-center justify-center ${
+                            tech.border
+                              ? isDark
+                                ? "bg-zinc-800 text-zinc-200 border border-zinc-600"
+                                : "bg-gray-100 text-gray-800 border border-gray-300"
+                              : isDark
+                              ? "bg-zinc-800 text-zinc-200"
                               : "bg-gray-100 text-gray-800"
                           }`}
+                          title={tech.name}
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Database
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["MongoDB", "PostgreSQL"].map((tech) => (
-                        <span
-                          key={tech}
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            isDark
-                              ? "bg-gray-800 text-gray-200"
+                          {tech.svg ? (
+                            <img
+                              src={tech.svg}
+                              alt={tech.name}
+                              className="w-6 h-6 object-contain"
+                              style={{
+                                filter:
+                                  isDark && !tech.noInvert
+                                    ? "invert(1)"
+                                    : "none",
+                              }}
+                            />
+                          ) : tech.icon ? (
+                            <tech.icon
+                              className="w-6 h-6"
+                              fill={tech.fill ? "currentColor" : "none"}
+                            />
+                          ) : null}
+                        </div>
+                      );
+                    })}
+                    {/* Duplicate set for seamless loop */}
+                    {[
+                      { name: "React", svg: "/logo-react.svg" },
+                      { name: "Next.js", svg: "/nextjs-icon-svgrepo-com.svg" },
+                      {
+                        name: "Tailwind CSS",
+                        svg: "/tailwindcss-svgrepo-com.svg",
+                      },
+                      { name: "shadcn/ui", svg: "/shadcn-ui-seeklogo.svg" },
+                      { name: "Figma", svg: "/logo-figma.svg" },
+                      { name: "Node.js", svg: "/logo-nodejs.svg" },
+                      { name: "Python", svg: "/logo-python.svg", border: true },
+                      { name: "C", icon: Terminal, border: true },
+                      { name: "Supabase", icon: Cloud },
+                      { name: "AWS", svg: "/aws-svgrepo-com.svg" },
+                      { name: "Vercel", icon: Play, fill: true },
+                      { name: "MongoDB", svg: "/mongodb-svgrepo-com.svg" },
+                      {
+                        name: "PostgreSQL",
+                        svg: "/postgresql-svgrepo-com.svg",
+                      },
+                      { name: "Git", svg: "/git-branch-outline.svg" },
+                      { name: "GitHub", svg: "/logo-github.svg" },
+                      {
+                        name: "Linux",
+                        svg: "/linux-svgrepo-com.svg",
+                        noInvert: true,
+                      },
+                    ].map((tech, idx) => {
+                      return (
+                        <div
+                          key={`second-${idx}`}
+                          className={`p-3 rounded-lg transition-colors duration-200 shrink-0 flex items-center justify-center ${
+                            tech.border
+                              ? isDark
+                                ? "bg-zinc-800 text-zinc-200 border border-zinc-600"
+                                : "bg-gray-100 text-gray-800 border border-gray-300"
+                              : isDark
+                              ? "bg-zinc-800 text-zinc-200"
                               : "bg-gray-100 text-gray-800"
                           }`}
+                          title={tech.name}
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Version Control
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["Git", "GitHub"].map((tech) => (
-                        <span
-                          key={tech}
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            isDark
-                              ? "bg-gray-800 text-gray-200"
-                              : "bg-gray-100 text-gray-800"
-                          }`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3
-                      className={`font-semibold mb-3 text-sm transition-colors duration-200 ${
-                        isDark ? "text-zinc-200" : "text-gray-800"
-                      }`}
-                    >
-                      Operating System
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          isDark
-                            ? "bg-zinc-800 text-zinc-200"
-                            : "bg-gray-100 text-gray-800"
-                        }`}
-                      >
-                        Linux
-                      </span>
-                    </div>
+                          {tech.svg ? (
+                            <img
+                              src={tech.svg}
+                              alt={tech.name}
+                              className="w-6 h-6 object-contain"
+                              style={{
+                                filter:
+                                  isDark && !tech.noInvert
+                                    ? "invert(1)"
+                                    : "none",
+                              }}
+                            />
+                          ) : tech.icon ? (
+                            <tech.icon
+                              className="w-6 h-6"
+                              fill={tech.fill ? "currentColor" : "none"}
+                            />
+                          ) : null}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
