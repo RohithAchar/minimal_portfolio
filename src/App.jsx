@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSEO } from "./hooks/useSEO";
+import {
+  User,
+  FolderKanban,
+  GraduationCap,
+  BookOpen,
+  Mail,
+  Home,
+} from "lucide-react";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
@@ -301,17 +309,37 @@ export default function Portfolio() {
         }`}
         role="banner"
       >
-        <div className="max-w-2xl mx-auto px-6 py-12">
+        <div className="max-w-2xl mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 w-full">
           <div className="flex justify-between items-start mb-6">
-            <div>
-              <h1 className="text-4xl font-bold mb-3">Rohith Achar</h1>
-              <p
-                className={`text-xl mb-4 ${
-                  isDark ? "text-zinc-300" : "text-gray-600"
-                }`}
+            <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+              {/* Logo */}
+              <svg
+                id="Layer_2"
+                data-name="Layer 2"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 111 111"
+                className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 transition-colors duration-200"
+                aria-label="Rohith Achar Logo"
               >
-                Full Stack Developer
-              </p>
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <path
+                    fill={isDark ? "#ffffff" : "#000000"}
+                    d="M73.08,54.2c-4.77-.71-7.15-6.25-4.3-10.14.65-.88,1.11-1.37,1.11-1.37l14.28-14.28-1.59-1.59-14.28,14.28s-.45.42-1.25,1.02c-3.95,2.94-9.68.56-10.25-4.33-.12-1.02-.18-2.09-.18-3.24V0h-2.25v34.56c0,1.13-.06,2.19-.18,3.19-.57,4.95-6.43,7.38-10.33,4.28-.79-.63-1.58-1.33-2.38-2.13l-13.08-13.08-1.59,1.59,13.08,13.08c.81.81,1.53,1.62,2.16,2.42,3.06,3.86.69,9.59-4.19,10.31-1,.15-1.61.16-1.61.16H0v2.25h36.26s.63.02,1.66.17c4.77.71,7.15,6.25,4.3,10.14-.65.88-1.11,1.37-1.11,1.37l-14.28,14.28,1.59,1.59,14.28-14.28s.44-.42,1.25-1.02c3.95-2.94,9.68-.56,10.25,4.33.12,1.02.18,2.09.18,3.24v34.56h2.25v-34.56c0-1.13.06-2.19.18-3.19.57-4.95,6.43-7.38,10.33-4.28.79.63,1.58,1.34,2.38,2.13l13.08,13.08,1.59-1.59-13.08-13.08c-.81-.81-1.53-1.62-2.16-2.42-3.06-3.86-.69-9.59,4.19-10.31,1-.15,1.61-.16,1.61-.16h36.26v-2.25h-36.26s-.63-.02-1.66-.17Z"
+                  />
+                </g>
+              </svg>
+              <div className="min-w-0 flex-1">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-3 truncate">
+                  Rohith Achar
+                </h1>
+                <p
+                  className={`text-base sm:text-lg md:text-xl mb-2 sm:mb-4 ${
+                    isDark ? "text-zinc-300" : "text-gray-600"
+                  }`}
+                >
+                  Full Stack Developer
+                </p>
+              </div>
             </div>
             <button
               onClick={toggleTheme}
@@ -352,8 +380,7 @@ export default function Portfolio() {
               isDark ? "text-zinc-400" : "text-gray-600"
             }`}
           >
-            Building meaningful projects and documenting my learning journey.
-            Passionate about clean code, user experience, and sharing knowledge.
+            Building projects and learning.
           </p>
           <nav aria-label="Social media links">
             <ul className="flex gap-6 text-sm list-none">
@@ -405,9 +432,9 @@ export default function Portfolio() {
         </div>
       </header>
 
-      {/* Main Navigation */}
+      {/* Main Navigation - Desktop */}
       <nav
-        className={`border-b sticky top-0 z-10 backdrop-blur-sm transition-colors ${
+        className={`hidden md:block border-b sticky top-0 z-10 backdrop-blur-sm transition-colors ${
           isDark
             ? "bg-zinc-900/95 border-zinc-800"
             : "bg-white/95 border-gray-200"
@@ -416,7 +443,7 @@ export default function Portfolio() {
         aria-label="Main navigation"
       >
         <div className="max-w-2xl mx-auto px-6">
-          <ul className="flex gap-8 list-none">
+          <ul className="flex gap-6 md:gap-8 list-none">
             <li>
               <button
                 onClick={() => setActiveSection("about")}
@@ -509,7 +536,10 @@ export default function Portfolio() {
       </nav>
 
       {/* Main Content - Semantic HTML */}
-      <main className="max-w-2xl mx-auto px-6 py-12" role="main">
+      <main
+        className="max-w-2xl mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 pb-20 md:pb-12"
+        role="main"
+      >
         {/* About Section */}
         {activeSection === "about" && (
           <div className="space-y-12 transition-colors duration-200">
@@ -541,12 +571,48 @@ export default function Portfolio() {
                 >
                   During my Bachelor's in Computer Applications, I enrolled in
                   the Wipro TalentNext program where I began my formal coding
-                  journey. I further enhanced my skills by completing Harvard
-                  University's CS50 course, The Odin Project's comprehensive web
-                  development curriculum, and Harkirat Singh's advanced
-                  development course. Throughout these programs, I built
-                  multiple projects, reinforcing my belief in learning through
-                  practical application and hands-on experience.
+                  journey. I further enhanced my skills by completing{" "}
+                  <a
+                    href="https://youtube.com/playlist?list=PLhQjrBD2T383q7Vn8QnTsVgSvyLpsqL_R&si=K5PGbXwHXqeM8Dd3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`transition-colors ${
+                      isDark
+                        ? "text-zinc-100 hover:text-zinc-300"
+                        : "text-gray-900 hover:text-gray-700"
+                    }`}
+                  >
+                    Harvard University's CS50
+                  </a>{" "}
+                  course,{" "}
+                  <a
+                    href="https://www.theodinproject.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`transition-colors ${
+                      isDark
+                        ? "text-zinc-100 hover:text-zinc-300"
+                        : "text-gray-900 hover:text-gray-700"
+                    }`}
+                  >
+                    The Odin Project's
+                  </a>{" "}
+                  comprehensive web development curriculum, and{" "}
+                  <a
+                    href="https://harkirat.classx.co.in/new-courses/8-live-0-100-complete"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`transition-colors ${
+                      isDark
+                        ? "text-zinc-100 hover:text-zinc-300"
+                        : "text-gray-900 hover:text-gray-700"
+                    }`}
+                  >
+                    Harkirat Singh's
+                  </a>{" "}
+                  advanced development course. Throughout these programs, I
+                  built multiple projects, reinforcing my belief in learning
+                  through practical application and hands-on experience.
                 </p>
                 <p
                   className={`leading-relaxed ${
@@ -1151,7 +1217,7 @@ export default function Portfolio() {
         {activeSection === "contact" && (
           <section
             aria-labelledby="contact-heading"
-            className="max-w-2xl transition-colors duration-200"
+            className="w-full transition-colors duration-200"
           >
             <h2
               id="contact-heading"
@@ -1348,6 +1414,114 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+
+      {/* Mobile Bottom Navigation */}
+      <nav
+        className={`md:hidden fixed bottom-0 left-0 right-0 z-50 border-t transition-colors ${
+          isDark
+            ? "bg-zinc-900/95 border-zinc-800 backdrop-blur-sm"
+            : "bg-white/95 border-gray-200 backdrop-blur-sm"
+        }`}
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        <div className="max-w-2xl mx-auto">
+          <ul className="flex items-center justify-around list-none">
+            <li className="flex-1">
+              <button
+                onClick={() => setActiveSection("about")}
+                className={`w-full flex flex-col items-center justify-center py-3 transition-colors ${
+                  activeSection === "about"
+                    ? isDark
+                      ? "text-zinc-100"
+                      : "text-gray-900"
+                    : isDark
+                    ? "text-zinc-500"
+                    : "text-gray-500"
+                }`}
+                aria-current={activeSection === "about" ? "page" : undefined}
+              >
+                <User className="w-5 h-5 mb-1" />
+                <span className="text-xs">About</span>
+              </button>
+            </li>
+            <li className="flex-1">
+              <button
+                onClick={() => setActiveSection("projects")}
+                className={`w-full flex flex-col items-center justify-center py-3 transition-colors ${
+                  activeSection === "projects"
+                    ? isDark
+                      ? "text-zinc-100"
+                      : "text-gray-900"
+                    : isDark
+                    ? "text-zinc-500"
+                    : "text-gray-500"
+                }`}
+                aria-current={activeSection === "projects" ? "page" : undefined}
+              >
+                <FolderKanban className="w-5 h-5 mb-1" />
+                <span className="text-xs">Projects</span>
+              </button>
+            </li>
+            <li className="flex-1">
+              <button
+                onClick={() => setActiveSection("blog")}
+                className={`w-full flex flex-col items-center justify-center py-3 transition-colors ${
+                  activeSection === "blog"
+                    ? isDark
+                      ? "text-zinc-100"
+                      : "text-gray-900"
+                    : isDark
+                    ? "text-zinc-500"
+                    : "text-gray-500"
+                }`}
+                aria-current={activeSection === "blog" ? "page" : undefined}
+              >
+                <BookOpen className="w-5 h-5 mb-1" />
+                <span className="text-xs">Blog</span>
+              </button>
+            </li>
+            <li className="flex-1">
+              <button
+                onClick={() => setActiveSection("education")}
+                className={`w-full flex flex-col items-center justify-center py-3 transition-colors ${
+                  activeSection === "education"
+                    ? isDark
+                      ? "text-zinc-100"
+                      : "text-gray-900"
+                    : isDark
+                    ? "text-zinc-500"
+                    : "text-gray-500"
+                }`}
+                aria-current={
+                  activeSection === "education" ? "page" : undefined
+                }
+              >
+                <GraduationCap className="w-5 h-5 mb-1" />
+                <span className="text-xs">Education</span>
+              </button>
+            </li>
+            <li className="flex-1">
+              <button
+                onClick={() => setActiveSection("contact")}
+                className={`w-full flex flex-col items-center justify-center py-3 transition-colors ${
+                  activeSection === "contact"
+                    ? isDark
+                      ? "text-zinc-100"
+                      : "text-gray-900"
+                    : isDark
+                    ? "text-zinc-500"
+                    : "text-gray-500"
+                }`}
+                aria-current={activeSection === "contact" ? "page" : undefined}
+              >
+                <Mail className="w-5 h-5 mb-1" />
+                <span className="text-xs">Contact</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   );
 }
